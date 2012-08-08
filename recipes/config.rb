@@ -27,7 +27,7 @@ root_group = value_for_platform(
 
 chef_node_name = Chef::Config[:node_name] == node["fqdn"] ? false : Chef::Config[:node_name]
 
-%w{run_path cache_path backup_path log_dir}.each do |key|
+%w{run_path cache_path backup_path log_dir conf_dir}.each do |key|
   directory node['chef_client'][key] do
     recursive true
     owner "root"
